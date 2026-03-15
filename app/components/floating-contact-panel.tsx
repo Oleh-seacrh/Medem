@@ -1,45 +1,55 @@
 "use client";
 
 import {
-  Instagram,
-  type LucideIcon,
   Linkedin,
   Mail,
   MessageCircle,
   Phone,
-  Send,
-  X
+  X,
+  type LucideIcon
 } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
-type SocialLink = {
+type LinkedinProfile = {
+  href: string;
+  label: string;
+  short: string;
+};
+
+type QuickContactLink = {
+  id: "whatsapp" | "email";
   href: string;
   label: string;
   Icon: LucideIcon;
 };
 
-const socialLinks: SocialLink[] = [
+const linkedinProfiles: LinkedinProfile[] = [
   {
-    href: "https://www.instagram.com/",
-    label: "Instagram",
-    Icon: Instagram
+    href: "https://www.linkedin.com/company/medemltd/",
+    label: "MEDEM LTD company page",
+    short: "CO"
   },
   {
-    href: "https://www.linkedin.com/",
-    label: "LinkedIn",
-    Icon: Linkedin
+    href: "https://www.linkedin.com/in/oleh-yunyk/",
+    label: "Head of sales department",
+    short: "HS"
   },
   {
-    href: "https://t.me/+359884910016",
-    label: "Telegram",
-    Icon: Send
-  },
+    href: "https://www.linkedin.com/in/sergei-mokrushin/",
+    label: "CEO",
+    short: "CEO"
+  }
+];
+
+const quickContactLinks: QuickContactLink[] = [
   {
+    id: "whatsapp",
     href: "https://wa.me/359884910016",
     label: "WhatsApp",
     Icon: MessageCircle
   },
   {
+    id: "email",
     href: "mailto:info@xraymedem.com",
     label: "Email",
     Icon: Mail
@@ -48,8 +58,17 @@ const socialLinks: SocialLink[] = [
 
 export function FloatingContactPanel() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isHoverLocked, setIsHoverLocked] = useState(false);
+  const [activeLinkedinLabel, setActiveLinkedinLabel] = useState<string | null>(
+    null
+  );
   const panelRef = useRef<HTMLDivElement | null>(null);
   const closeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const tooltipSwapTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const tooltipIntentTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const tooltipSuppressUntilRef = useRef(0);
+  const activeLinkedinLabelRef = useRef<string | null>(null);
+  const pendingLinkedinLabelRef = useRef<string | null>(null);
 
   const clearCloseTimer = () => {
     if (closeTimerRef.current) {
@@ -58,8 +77,92 @@ export function FloatingContactPanel() {
     }
   };
 
+  const clearTooltipSwapTimer = () => {
+    if (tooltipSwapTimerRef.current) {
+      clearTimeout(tooltipSwapTimerRef.current);
+      tooltipSwapTimerRef.current = null;
+    }
+  };
+
+  const clearTooltipIntentTimer = () => {
+    if (tooltipIntentTimerRef.current) {
+      clearTimeout(tooltipIntentTimerRef.current);
+      tooltipIntentTimerRef.current = null;
+    }
+  };
+
+  const hideLinkedinTooltip = () => {
+    clearTooltipIntentTimer();
+    clearTooltipSwapTimer();
+    pendingLinkedinLabelRef.current = null;
+    activeLinkedinLabelRef.current = null;
+    setActiveLinkedinLabel(null);
+  };
+
+  const requestLinkedinTooltipLabel = (nextLabel: string | null) => {
+    const currentLabel = activeLinkedinLabelRef.current;
+
+    if (!nextLabel) {
+      hideLinkedinTooltip();
+      return;
+    }
+
+    if (!currentLabel) {
+      if (tooltipSwapTimerRef.current) {
+        pendingLinkedinLabelRef.current = nextLabel;
+        return;
+      }
+
+      pendingLinkedinLabelRef.current = null;
+      activeLinkedinLabelRef.current = nextLabel;
+      setActiveLinkedinLabel(nextLabel);
+      return;
+    }
+
+    if (currentLabel === nextLabel && !tooltipSwapTimerRef.current) {
+      return;
+    }
+
+    clearTooltipSwapTimer();
+    pendingLinkedinLabelRef.current = nextLabel;
+    activeLinkedinLabelRef.current = null;
+    setActiveLinkedinLabel(null);
+
+    tooltipSwapTimerRef.current = setTimeout(() => {
+      const pendingLabel = pendingLinkedinLabelRef.current;
+
+      if (!pendingLabel) {
+        tooltipSwapTimerRef.current = null;
+        return;
+      }
+
+      activeLinkedinLabelRef.current = pendingLabel;
+      setActiveLinkedinLabel(pendingLabel);
+      pendingLinkedinLabelRef.current = null;
+      tooltipSwapTimerRef.current = null;
+    }, 110);
+  };
+
+  const armLinkedinTooltip = (label: string) => {
+    if (Date.now() < tooltipSuppressUntilRef.current) {
+      return;
+    }
+
+    clearTooltipIntentTimer();
+    tooltipIntentTimerRef.current = setTimeout(() => {
+      requestLinkedinTooltipLabel(label);
+      tooltipIntentTimerRef.current = null;
+    }, 70);
+  };
+
   const openPanel = () => {
+    if (isHoverLocked) {
+      return;
+    }
+
     clearCloseTimer();
+    tooltipSuppressUntilRef.current = Date.now() + 180;
+    hideLinkedinTooltip();
     setIsOpen(true);
   };
 
@@ -67,8 +170,14 @@ export function FloatingContactPanel() {
     clearCloseTimer();
     closeTimerRef.current = setTimeout(() => {
       setIsOpen(false);
+      hideLinkedinTooltip();
       closeTimerRef.current = null;
     }, 180);
+  };
+
+  const handlePanelMouseLeave = () => {
+    setIsHoverLocked(false);
+    closePanelWithDelay();
   };
 
   useEffect(() => {
@@ -81,6 +190,7 @@ export function FloatingContactPanel() {
 
       clearCloseTimer();
       setIsOpen(false);
+      hideLinkedinTooltip();
     };
 
     document.addEventListener("mousedown", handlePointerDown);
@@ -92,6 +202,8 @@ export function FloatingContactPanel() {
       document.removeEventListener("mousedown", handlePointerDown);
       document.removeEventListener("touchstart", handlePointerDown);
       clearCloseTimer();
+      clearTooltipIntentTimer();
+      clearTooltipSwapTimer();
     };
   }, []);
 
@@ -99,10 +211,15 @@ export function FloatingContactPanel() {
     <aside className="floating-panel" aria-label="Quick contact panel">
       <div
         ref={panelRef}
-        className={`floating-social-panel${isOpen ? " is-open" : ""}`}
+        className={`floating-social-panel${isOpen ? " is-open" : ""}${
+          isHoverLocked ? " is-hover-locked" : ""
+        }`}
         onMouseEnter={openPanel}
-        onMouseLeave={closePanelWithDelay}
-        onFocusCapture={openPanel}
+        onMouseLeave={handlePanelMouseLeave}
+        onFocusCapture={() => {
+          setIsHoverLocked(false);
+          openPanel();
+        }}
         onBlur={(event) => {
           const nextFocused = event.relatedTarget as Node | null;
 
@@ -112,15 +229,63 @@ export function FloatingContactPanel() {
         }}
       >
         <div className="floating-social-list" role="list">
-          {socialLinks.map(({ href, label, Icon }) => (
+          <div
+            className="floating-linkedin-item"
+            role="listitem"
+            onMouseLeave={hideLinkedinTooltip}
+          >
+            <div
+              className="floating-linkedin-pill"
+              onMouseLeave={hideLinkedinTooltip}
+            >
+              <div className="floating-linkedin-mini-list" aria-label="LinkedIn profiles">
+                {linkedinProfiles.map(({ href, label, short }) => (
+                  <a
+                    key={label}
+                    href={href}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={label}
+                    className="floating-linkedin-mini"
+                    onMouseEnter={() => armLinkedinTooltip(label)}
+                    onFocus={() => requestLinkedinTooltipLabel(label)}
+                    onBlur={hideLinkedinTooltip}
+                    onMouseLeave={hideLinkedinTooltip}
+                    onClick={() => {
+                      clearCloseTimer();
+                      setIsOpen(false);
+                      hideLinkedinTooltip();
+                    }}
+                  >
+                    {short}
+                  </a>
+                ))}
+              </div>
+              <span className="floating-linkedin-pill-icon" aria-hidden="true">
+                <Linkedin size={22} strokeWidth={2.2} />
+              </span>
+            </div>
+            <span
+              className={`floating-linkedin-tooltip${
+                activeLinkedinLabel ? " is-visible" : ""
+              }`}
+              aria-hidden={activeLinkedinLabel ? undefined : true}
+            >
+              {activeLinkedinLabel}
+            </span>
+          </div>
+
+          {quickContactLinks.map(({ id, href, label, Icon }) => (
             <a
-              key={label}
+              key={id}
               href={href}
               target={href.startsWith("mailto:") ? undefined : "_blank"}
               rel={href.startsWith("mailto:") ? undefined : "noreferrer"}
               aria-label={label}
-              className="floating-social-link"
+              className={`floating-social-link floating-social-link--${id}`}
               role="listitem"
+              onMouseEnter={hideLinkedinTooltip}
+              onFocus={hideLinkedinTooltip}
               onClick={() => {
                 clearCloseTimer();
                 setIsOpen(false);
@@ -138,7 +303,12 @@ export function FloatingContactPanel() {
           aria-expanded={isOpen}
           onClick={() => {
             clearCloseTimer();
-            setIsOpen((open) => !open);
+            hideLinkedinTooltip();
+            setIsOpen((open) => {
+              const next = !open;
+              setIsHoverLocked(!next);
+              return next;
+            });
           }}
         >
           <span className="floating-dots" aria-hidden="true">

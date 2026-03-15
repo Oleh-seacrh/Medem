@@ -33,7 +33,7 @@ export function PartnersMarquee({ brands }: PartnersMarqueeProps) {
       },
       {
         root: null,
-        threshold: 0.25
+        threshold: 0
       }
     );
 

@@ -82,44 +82,60 @@ const valueCards: ValueCard[] = [
 
 const brands: Brand[] = [
   {
-    name: "Philips",
-    logo: "https://new.xraymedem.com/wp-content/uploads/2025/08/Mask-group.svg"
-  },
-  {
-    name: "Carestream",
-    logo: "https://new.xraymedem.com/wp-content/uploads/2025/08/Group-569.svg"
-  },
-  {
-    name: "Fujifilm",
-    logo: "https://new.xraymedem.com/wp-content/uploads/2025/08/Group-570.svg"
-  },
-  {
-    name: "Drager",
-    logo: "https://new.xraymedem.com/wp-content/uploads/2025/08/Group-571.svg"
-  },
-  {
-    name: "Konica Minolta",
-    logo: "https://new.xraymedem.com/wp-content/uploads/2025/08/Group-572.svg"
-  },
-  {
-    name: "General Electric",
-    logo: "https://new.xraymedem.com/wp-content/uploads/2025/08/image-71.svg"
-  },
-  {
-    name: "Fresenius",
-    logo: "https://new.xraymedem.com/wp-content/uploads/2025/08/image-70.svg"
-  },
-  {
-    name: "BioMerieux",
-    logo: "https://new.xraymedem.com/wp-content/uploads/2025/08/Mask-group-2.svg"
-  },
-  {
-    name: "Siemens",
-    logo: "https://new.xraymedem.com/wp-content/uploads/2025/08/Mask-group-1.svg"
+    name: "Toshiba",
+    logo: "https://new.xraymedem.com/wp-content/uploads/2025/10/Toshiba_logo.svg"
   },
   {
     name: "Sony",
-    logo: "https://new.xraymedem.com/wp-content/uploads/2025/08/image-69.svg"
+    logo: "https://new.xraymedem.com/wp-content/uploads/2025/10/Sony_logo.svg"
+  },
+  {
+    name: "Siemens",
+    logo: "https://new.xraymedem.com/wp-content/uploads/2025/10/Siemens_AG_logo.svg"
+  },
+  {
+    name: "Roche",
+    logo: "https://new.xraymedem.com/wp-content/uploads/2025/10/Roche_Logo.svg"
+  },
+  {
+    name: "Abbott",
+    logo: "https://new.xraymedem.com/wp-content/uploads/2025/10/Logo_Abbott_Laboratories.svg"
+  },
+  {
+    name: "Konica Minolta",
+    logo: "https://new.xraymedem.com/wp-content/uploads/2025/10/Konica_Minolta-Logo.svg"
+  },
+  {
+    name: "General Electric",
+    logo: "https://new.xraymedem.com/wp-content/uploads/2025/10/General_Electric_logo.svg"
+  },
+  {
+    name: "Carestream",
+    logo: "https://new.xraymedem.com/wp-content/uploads/2025/10/Carestream_Logo.svg"
+  },
+  {
+    name: "Fujifilm",
+    logo: "https://new.xraymedem.com/wp-content/uploads/2025/10/Fujifilm_logo.svg"
+  },
+  {
+    name: "Drager",
+    logo: "https://new.xraymedem.com/wp-content/uploads/2025/10/Drager_Logo.svg"
+  },
+  {
+    name: "Fresenius Medical Care",
+    logo: "https://new.xraymedem.com/wp-content/uploads/2025/10/Fresenius_Medical_Care_logo.svg"
+  },
+  {
+    name: "bioMerieux",
+    logo: "https://new.xraymedem.com/wp-content/uploads/2025/10/BioMerieux_logo.svg"
+  },
+  {
+    name: "BD",
+    logo: "https://new.xraymedem.com/wp-content/uploads/2025/10/Becton_Dickinson_logo.svg"
+  },
+  {
+    name: "Beckman Coulter",
+    logo: "https://new.xraymedem.com/wp-content/uploads/2025/10/Beckman_Coulter_Logo.svg"
   }
 ];
 

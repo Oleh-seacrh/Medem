@@ -1,6 +1,8 @@
 "use client";
 
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import { Clock3, PackageCheck, ShieldCheck, X } from "lucide-react";
+import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 
 type NavItem = {
@@ -16,9 +18,9 @@ type ProductMenuItem = {
 };
 
 const navItems: NavItem[] = [
-  { id: "home", label: "Home", href: "#" },
+  { id: "home", label: "Home", href: "/" },
   { id: "products", label: "Products", href: "#products" },
-  { id: "partnership", label: "Partnership", href: "#partnership" },
+  { id: "partnership", label: "Partnership", href: "/partners" },
   { id: "contact", label: "Contact us", href: "#contact" }
 ];
 
@@ -34,13 +36,55 @@ const productMenuItems: ProductMenuItem[] = [
 ];
 
 export function SiteHeader() {
+  const ctaRectRadius = 10;
+  const ctaPillRadius = 30;
+  const ctaMorphTransition = {
+    duration: 1,
+    ease: [0.18, 0.86, 0.32, 1] as const
+  };
+  const productsDropdownTransition = {
+    duration: 0.26,
+    ease: [0.16, 1, 0.3, 1] as const
+  };
+  const productsListVariants = {
+    hidden: {
+      opacity: 0
+    },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.032,
+        delayChildren: 0.03
+      }
+    }
+  };
+  const productsItemVariants = {
+    hidden: {
+      opacity: 0,
+      y: 6
+    },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.2,
+        ease: [0.2, 0.84, 0.3, 1] as const
+      }
+    }
+  };
+
   const [activeNav, setActiveNav] = useState("home");
   const [isScrolled, setIsScrolled] = useState(false);
   const [isProductsOpen, setIsProductsOpen] = useState(false);
+  const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
   const closeProductsTimerRef = useRef<ReturnType<typeof setTimeout> | null>(
     null
   );
+  const quoteTriggerRef = useRef<HTMLButtonElement | null>(null);
   const shouldReduceMotion = useReducedMotion();
+  const pathname = usePathname();
+  const productsHref = pathname === "/" ? "#products" : "/#products";
+  const contactHref = pathname === "/" ? "#contact" : "/#contact";
 
   const clearProductsCloseTimer = () => {
     if (closeProductsTimerRef.current) {
@@ -62,6 +106,19 @@ export function SiteHeader() {
     }, 100);
   };
 
+  const openQuoteModal = () => {
+    clearProductsCloseTimer();
+    setIsProductsOpen(false);
+    setIsQuoteModalOpen(true);
+  };
+
+  const closeQuoteModal = () => {
+    setIsQuoteModalOpen(false);
+    window.setTimeout(() => {
+      quoteTriggerRef.current?.focus();
+    }, 0);
+  };
+
   useEffect(() => {
     const onScroll = () => {
       setIsScrolled(window.scrollY > 2);
@@ -76,22 +133,62 @@ export function SiteHeader() {
     };
   }, []);
 
+  useEffect(() => {
+    if (!isQuoteModalOpen) {
+      return;
+    }
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        event.preventDefault();
+        closeQuoteModal();
+      }
+    };
+
+    window.addEventListener("keydown", onKeyDown);
+
+    return () => {
+      window.removeEventListener("keydown", onKeyDown);
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [isQuoteModalOpen]);
+
+  useEffect(() => {
+    if (pathname === "/partners" || pathname === "/partnership") {
+      setActiveNav("partnership");
+    }
+  }, [pathname]);
+
   return (
-    <header className={`site-header${isScrolled ? " site-header--scrolled" : ""}`}>
-      <div className="shell">
-        <motion.div
-          className="header-row"
-          initial={{ opacity: 0, y: -14 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-        >
+    <>
+      <header
+        className={`site-header${isScrolled ? " site-header--scrolled" : ""}`}
+      >
+        <div className="shell">
+          <motion.div
+            className="header-row"
+            initial={{ opacity: 0, y: -14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+          >
           <motion.a
             href="/"
             className="header-block header-block--logo-modern"
             aria-label="Medem home"
+            animate={{
+              borderRadius: isScrolled ? ctaPillRadius : ctaRectRadius
+            }}
+            transition={{
+              type: "spring",
+              stiffness: 420,
+              damping: 30,
+              borderRadius: ctaMorphTransition
+            }}
             whileHover={{ y: -2 }}
             whileTap={{ scale: 0.992 }}
-            transition={{ type: "spring", stiffness: 420, damping: 30 }}
           >
             <img
               src={
@@ -112,6 +209,12 @@ export function SiteHeader() {
           >
             {navItems.map((item) => {
               const isActive = activeNav === item.id;
+              const itemHref =
+                item.id === "products"
+                  ? productsHref
+                  : item.id === "contact"
+                    ? contactHref
+                    : item.href;
 
               if (item.id === "products") {
                 return (
@@ -154,7 +257,7 @@ export function SiteHeader() {
                       ) : null}
 
                       <a
-                        href={item.href}
+                        href={itemHref}
                         className="menu-pill-products-link"
                         onClick={() => {
                           clearProductsCloseTimer();
@@ -188,16 +291,26 @@ export function SiteHeader() {
                         <motion.div
                           id="header-products-dropdown"
                           className="header-products-dropdown"
-                          initial={{ opacity: 0, y: 12 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          exit={{ opacity: 0, y: 8 }}
-                          transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
+                          initial={{ opacity: 0, y: 12, scale: 0.985 }}
+                          animate={{ opacity: 1, y: 0, scale: 1 }}
+                          exit={{ opacity: 0, y: 8, scale: 0.992 }}
+                          transition={productsDropdownTransition}
+                          style={{ transformOrigin: "top left" }}
                         >
-                          <ul className="header-products-list">
+                          <motion.ul
+                            className="header-products-list"
+                            variants={productsListVariants}
+                            initial="hidden"
+                            animate="show"
+                            exit="hidden"
+                          >
                             {productMenuItems.map((menuItem) => (
-                              <li key={menuItem.slug}>
+                              <motion.li
+                                key={menuItem.slug}
+                                variants={productsItemVariants}
+                              >
                                 <a
-                                  href="#products"
+                                  href={productsHref}
                                   className="header-products-link"
                                   onClick={() => {
                                     clearProductsCloseTimer();
@@ -210,9 +323,9 @@ export function SiteHeader() {
                                     {menuItem.count}
                                   </span>
                                 </a>
-                              </li>
+                              </motion.li>
                             ))}
-                          </ul>
+                          </motion.ul>
                         </motion.div>
                       ) : null}
                     </AnimatePresence>
@@ -223,7 +336,7 @@ export function SiteHeader() {
               return (
                 <motion.a
                   key={item.id}
-                  href={item.href}
+                  href={itemHref}
                   onClick={() => setActiveNav(item.id)}
                   className={`menu-pill menu-pill--modern ${
                     isActive ? "menu-pill--active-modern" : ""
@@ -263,22 +376,34 @@ export function SiteHeader() {
             </motion.button>
           </motion.div>
 
-          <motion.a
-            href="#contact"
+          <motion.button
+            type="button"
+            ref={quoteTriggerRef}
             className="header-block header-block--cta header-block--cta-modern"
+            onClick={openQuoteModal}
+            aria-haspopup="dialog"
+            aria-expanded={isQuoteModalOpen}
             animate={
               shouldReduceMotion
-                ? undefined
-                : { y: [0, 0, 0, 0, -5.12, 1.28, -2.56, 0] }
+                ? { borderRadius: isScrolled ? ctaPillRadius : ctaRectRadius }
+                : {
+                    y: [0, 0, 0, 0, -5.12, 1.28, -2.56, 0],
+                    borderRadius: isScrolled ? ctaPillRadius : ctaRectRadius
+                  }
             }
             transition={
               shouldReduceMotion
-                ? undefined
+                ? {
+                    borderRadius: ctaMorphTransition
+                  }
                 : {
-                    duration: 5.75,
-                    times: [0, 0.74, 0.8, 0.86, 0.9, 0.94, 0.97, 1],
-                    ease: "easeInOut",
-                    repeat: Number.POSITIVE_INFINITY
+                    y: {
+                      duration: 5.75,
+                      times: [0, 0.74, 0.8, 0.86, 0.9, 0.94, 0.97, 1],
+                      ease: "easeInOut",
+                      repeat: Number.POSITIVE_INFINITY
+                    },
+                    borderRadius: ctaMorphTransition
                   }
             }
             whileHover={{ y: -2 }}
@@ -286,9 +411,140 @@ export function SiteHeader() {
             whileFocus={{ y: -2 }}
           >
             Get a quote
-          </motion.a>
+          </motion.button>
         </motion.div>
       </div>
     </header>
+
+      <AnimatePresence>
+        {isQuoteModalOpen ? (
+          <motion.div
+            className="quote-modal-overlay"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={
+              shouldReduceMotion ? { duration: 0 } : { duration: 0.22 }
+            }
+            onClick={closeQuoteModal}
+          >
+            <motion.div
+              className="quote-modal-card"
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="quote-modal-title"
+              initial={
+                shouldReduceMotion
+                  ? { opacity: 1, scale: 1 }
+                  : { opacity: 0, y: 16, scale: 0.985 }
+              }
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={
+                shouldReduceMotion
+                  ? { opacity: 0 }
+                  : { opacity: 0, y: 12, scale: 0.99 }
+              }
+              transition={
+                shouldReduceMotion
+                  ? { duration: 0 }
+                  : {
+                      duration: 0.32,
+                      ease: [0.22, 1, 0.36, 1]
+                    }
+              }
+              onClick={(event) => event.stopPropagation()}
+            >
+              <aside className="quote-modal-aside">
+                <p className="quote-modal-kicker">Fast dispatch. Full transparency.</p>
+                <h2 id="quote-modal-title">Get a tailored quote in 24 hours</h2>
+                <p className="quote-modal-copy">
+                  Share your request and we will prepare the best matching offer for
+                  your project.
+                </p>
+                <ul className="quote-modal-benefits">
+                  <li>
+                    <Clock3 size={16} aria-hidden="true" />
+                    Offer within 24 hours
+                  </li>
+                  <li>
+                    <PackageCheck size={16} aria-hidden="true" />
+                    Access to premium brands
+                  </li>
+                  <li>
+                    <ShieldCheck size={16} aria-hidden="true" />
+                    Transparent and secure deals
+                  </li>
+                </ul>
+              </aside>
+
+              <div className="quote-modal-main">
+                <button
+                  type="button"
+                  className="quote-modal-close"
+                  aria-label="Close quote form"
+                  onClick={closeQuoteModal}
+                >
+                  <X size={18} aria-hidden="true" />
+                </button>
+
+                <form
+                  className="quote-modal-form"
+                  onSubmit={(event) => {
+                    event.preventDefault();
+                    closeQuoteModal();
+                  }}
+                >
+                  <div className="quote-modal-grid">
+                    <label className="quote-modal-field">
+                      <span>Name</span>
+                      <input type="text" name="name" placeholder="Your name" required />
+                    </label>
+
+                    <label className="quote-modal-field">
+                      <span>Phone</span>
+                      <input type="tel" name="phone" placeholder="+359" />
+                    </label>
+
+                    <label className="quote-modal-field">
+                      <span>Email</span>
+                      <input type="email" name="email" placeholder="name@company.com" required />
+                    </label>
+
+                    <label className="quote-modal-field">
+                      <span>Product category</span>
+                      <select name="product" defaultValue="">
+                        <option value="" disabled>
+                          Select category
+                        </option>
+                        {productMenuItems.map((menuItem) => (
+                          <option key={menuItem.slug} value={menuItem.slug}>
+                            {menuItem.name}
+                          </option>
+                        ))}
+                      </select>
+                    </label>
+
+                    <label className="quote-modal-field quote-modal-field--full">
+                      <span>Message</span>
+                      <textarea
+                        name="message"
+                        rows={5}
+                        placeholder="Tell us what models, quantity or specs you need..."
+                      />
+                    </label>
+                  </div>
+
+                  <div className="quote-modal-actions">
+                    <button type="submit" className="quote-modal-submit">
+                      Send request
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </motion.div>
+          </motion.div>
+        ) : null}
+      </AnimatePresence>
+    </>
   );
 }
