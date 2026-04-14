@@ -260,7 +260,15 @@ function getProductsByIds(ids: number[] | undefined): CatalogProduct[] {
     .filter((product): product is CatalogProduct => Boolean(product));
 }
 
-export default function CatalogPage() {
+type CatalogPageProps = {
+  searchParams?: {
+    item?: string;
+  };
+};
+
+export default function CatalogPage({ searchParams }: CatalogPageProps) {
+  const activeItemId = searchParams?.item ?? "";
+
   return (
     <main className="catalog-page">
       <section className="section">
@@ -313,8 +321,9 @@ export default function CatalogPage() {
             {section.items.map((item, index) => (
               <details
                 key={item.id}
+                id={item.id}
                 className="catalog-accordion-item"
-                open={index === 0}
+                open={item.id === activeItemId || (index === 0 && !activeItemId)}
               >
                 <summary>
                   <span>{item.title}</span>

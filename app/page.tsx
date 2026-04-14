@@ -5,6 +5,7 @@ type CategoryCard = {
   description: string;
   products: string;
   className: string;
+  href: string;
 };
 
 type ValueCard = {
@@ -32,28 +33,32 @@ const categoryCards: CategoryCard[] = [
     description:
       "One of our main fields of working is radiology equipment and consumables. We provide our products to partners all around the globe. Our partners are official distrib...",
     products: "44 products",
-    className: "category-card--primary"
+    className: "category-card--primary",
+    href: "/products?item=radiology-equipment#radiology-equipment"
   },
   {
     title: "Lab equipment and consumables",
     description:
       "Laboratories requires a vareity of equipment and instrumentation to run tests and research. These staple, workhouse general lab equipment can be found acro...",
     products: "122 products",
-    className: "category-card--muted"
+    className: "category-card--muted",
+    href: "/products?item=lab-equipment-spare-parts#lab-equipment-spare-parts"
   },
   {
     title: "MRI systems",
     description:
       "MRI systems support precise diagnostic work by delivering detailed imaging of internal organs and soft tissues. Clinics rely on these systems for consistent quality, reliability, and confident medical decisions",
     products: "25 products",
-    className: "category-card--dark"
+    className: "category-card--dark",
+    href: "/products?item=ct-mri-equipment#ct-mri-equipment"
   },
   {
     title: "Nephrology",
     description:
       "Clinics and hospitals require reliable dialysis equipment and consumables to support kidney treatment. Our nephrology selection includes dialyzers and dry bicarbonate mixes from trusted...",
     products: "7 products",
-    className: "category-card--accent"
+    className: "category-card--accent",
+    href: "/products?item=nephrology-equipment#nephrology-equipment"
   }
 ];
 
@@ -210,7 +215,12 @@ export default function HomePage() {
       <section className="section" id="products">
         <div className="categories-grid">
           {categoryCards.map((card) => (
-            <article key={card.title} className={`category-card ${card.className}`}>
+            <a
+              key={card.title}
+              href={card.href}
+              className={`category-card ${card.className}`}
+              aria-label={`${card.title} - ${card.products}`}
+            >
               <div>
                 <h2>{card.title}</h2>
                 <p>{card.description}</p>
@@ -219,7 +229,7 @@ export default function HomePage() {
                 <span className="category-products">{card.products}</span>
                 <ArrowRightIcon />
               </footer>
-            </article>
+            </a>
           ))}
         </div>
       </section>
