@@ -1,0 +1,642 @@
+[
+    {
+        "id":  258,
+        "title":  "DVE",
+        "slug":  "dve",
+        "desc":  "Medical film for X-ray diagnostics",
+        "img":  "https://new.xraymedem.com/wp-content/uploads/2025/08/Carestream-DVE-film-scaled.jpg",
+        "link":  "https://new.xraymedem.com/product/dve/"
+    },
+    {
+        "id":  262,
+        "title":  "Cassette and screen for CR Classic",
+        "slug":  "cassette-and-screen-for-cr-classic",
+        "desc":  "Cassette and screen for CR systems",
+        "img":  "https://new.xraymedem.com/wp-content/uploads/2025/08/Cassette-and-screen-for-CR-Classic-scaled.jpg",
+        "link":  "https://new.xraymedem.com/product/cassette-and-screen-for-cr-classic/"
+    },
+    {
+        "id":  263,
+        "title":  "Cassette and screen for CR VitaFlex",
+        "slug":  "cassette-and-screen-for-cr-vitaflex",
+        "desc":  "Cassette and screen for CR systems",
+        "img":  "https://new.xraymedem.com/wp-content/uploads/2025/08/Cassette-and-screen-for-CR-VitaFlex-scaled.jpg",
+        "link":  "https://new.xraymedem.com/product/cassette-and-screen-for-cr-vitaflex/"
+    },
+    {
+        "id":  264,
+        "title":  "Drypix 8000",
+        "slug":  "drypix-8000-2",
+        "desc":  "High-volume medical image printer",
+        "img":  "https://new.xraymedem.com/wp-content/uploads/2025/08/Drypix-8000-scaled.jpg",
+        "link":  "https://new.xraymedem.com/product/drypix-8000-2/"
+    },
+    {
+        "id":  316,
+        "title":  "Drypix 4000",
+        "slug":  "drypix-4000",
+        "desc":  "High-speed medical laser printer",
+        "img":  "https://new.xraymedem.com/wp-content/uploads/2025/08/Drypix-4000-scaled.jpg",
+        "link":  "https://new.xraymedem.com/product/drypix-4000/"
+    },
+    {
+        "id":  317,
+        "title":  "Drypix 2000",
+        "slug":  "drypix-2000",
+        "desc":  "Laser printer for medical imaging",
+        "img":  "https://new.xraymedem.com/wp-content/uploads/2025/08/Drypix-2000-scaled.jpg",
+        "link":  "https://new.xraymedem.com/product/drypix-2000/"
+    },
+    {
+        "id":  318,
+        "title":  "FCR Capsula",
+        "slug":  "fcr-capsula",
+        "desc":  "Compact CR digital radiography system",
+        "img":  "https://new.xraymedem.com/wp-content/uploads/2025/08/FCR-Capsula-scaled.jpg",
+        "link":  "https://new.xraymedem.com/product/fcr-capsula/"
+    },
+    {
+        "id":  323,
+        "title":  "Prima T2",
+        "slug":  "prima-t2",
+        "desc":  "Digital X-ray machine for diagnostics",
+        "img":  "https://new.xraymedem.com/wp-content/uploads/2025/08/Prima-T2-scaled.jpg",
+        "link":  "https://new.xraymedem.com/product/prima-t2/"
+    },
+    {
+        "id":  324,
+        "title":  "Di-ht",
+        "slug":  "di-ht",
+        "desc":  "Thermosensitive film for image printing",
+        "img":  "https://new.xraymedem.com/wp-content/uploads/2025/08/Fujifilm-Di-hT-scaled.jpg",
+        "link":  "https://new.xraymedem.com/product/di-ht/"
+    },
+    {
+        "id":  325,
+        "title":  "Di-hl",
+        "slug":  "di-hl",
+        "desc":  "Medical film for X-ray imaging",
+        "img":  "https://new.xraymedem.com/wp-content/uploads/2025/08/Fujifilm-Di-HL-scaled.jpg",
+        "link":  "https://new.xraymedem.com/product/di-hl/"
+    },
+    {
+        "id":  541,
+        "title":  "DVB+",
+        "slug":  "dvb-plus",
+        "desc":  "High-sensitivity X-ray film",
+        "img":  "https://new.xraymedem.com/wp-content/uploads/2025/09/Carestream-DVB-scaled.jpg",
+        "link":  "https://new.xraymedem.com/product/dvb-plus/"
+    },
+    {
+        "id":  543,
+        "title":  "DVM+",
+        "slug":  "dvm-plus",
+        "desc":  "Mammography X-ray film",
+        "img":  "https://new.xraymedem.com/wp-content/uploads/2025/09/Carestream-DVM-scaled.jpg",
+        "link":  "https://new.xraymedem.com/product/dvm-plus/"
+    },
+    {
+        "id":  547,
+        "title":  "TXE",
+        "slug":  "txe",
+        "desc":  "Film for dental X-ray imaging",
+        "img":  "https://new.xraymedem.com/wp-content/uploads/2025/09/Carestream-TXE-scaled.jpg",
+        "link":  "https://new.xraymedem.com/product/txe/"
+    },
+    {
+        "id":  549,
+        "title":  "TXM+",
+        "slug":  "txm-plus",
+        "desc":  "Dental X-ray film, high sensitivity",
+        "img":  "https://new.xraymedem.com/wp-content/uploads/2025/09/Carestream-TXE-1-scaled.jpg",
+        "link":  "https://new.xraymedem.com/product/txm-plus/"
+    },
+    {
+        "id":  551,
+        "title":  "D-speed",
+        "slug":  "d-speed",
+        "desc":  "Standard sensitivity X-ray film",
+        "img":  "https://new.xraymedem.com/wp-content/uploads/2025/09/Carestream-D-speed-scaled.jpg",
+        "link":  "https://new.xraymedem.com/product/d-speed/"
+    },
+    {
+        "id":  553,
+        "title":  "E-speed",
+        "slug":  "e-speed",
+        "desc":  "High sensitivity X-ray film",
+        "img":  "https://new.xraymedem.com/wp-content/uploads/2025/09/Carestream-E-speed-scaled.jpg",
+        "link":  "https://new.xraymedem.com/product/e-speed/"
+    },
+    {
+        "id":  555,
+        "title":  "Developer",
+        "slug":  "developer",
+        "desc":  "Developer for X-ray film processing",
+        "img":  "https://new.xraymedem.com/wp-content/uploads/2025/09/Carestream-DENTAL-Developer-scaled.jpg",
+        "link":  "https://new.xraymedem.com/product/developer/"
+    },
+    {
+        "id":  557,
+        "title":  "Fixer",
+        "slug":  "fixer",
+        "desc":  "Fixing solution for image stabilization",
+        "img":  "https://new.xraymedem.com/wp-content/uploads/2025/09/Carestream-DENTAL-fixer-scaled.jpg",
+        "link":  "https://new.xraymedem.com/product/fixer/"
+    },
+    {
+        "id":  559,
+        "title":  "DT2 B",
+        "slug":  "dt2-b",
+        "desc":  "Chemical developer for medical film",
+        "img":  "https://new.xraymedem.com/wp-content/uploads/2025/09/Agfa-DT2-B-scaled.jpg",
+        "link":  "https://new.xraymedem.com/product/dt2-b/"
+    },
+    {
+        "id":  561,
+        "title":  "DT5000IB",
+        "slug":  "dt5000ib",
+        "desc":  "Fixing concentrate for film developing",
+        "img":  "https://new.xraymedem.com/wp-content/uploads/2025/09/Agfa-DT5000IB-scaled.jpg",
+        "link":  "https://new.xraymedem.com/product/dt5000ib/"
+    },
+    {
+        "id":  563,
+        "title":  "CR-10x",
+        "slug":  "cr-10x",
+        "desc":  "Medical film for X-ray imaging",
+        "img":  "https://new.xraymedem.com/wp-content/uploads/2025/09/Agfa-CR-10x-scaled.jpg",
+        "link":  "https://new.xraymedem.com/product/cr-10x/"
+    },
+    {
+        "id":  565,
+        "title":  "CR-15x",
+        "slug":  "cr-15x",
+        "desc":  "Thermosensitive film for image printing",
+        "img":  "https://new.xraymedem.com/wp-content/uploads/2025/09/Agfa-CR-15x-scaled.jpg",
+        "link":  "https://new.xraymedem.com/product/cr-15x/"
+    },
+    {
+        "id":  567,
+        "title":  "CR-30x",
+        "slug":  "cr-30x",
+        "desc":  "Digital X-ray machine for diagnostics",
+        "img":  "https://new.xraymedem.com/wp-content/uploads/2025/09/agfa-cr-30x-scaled.jpg",
+        "link":  "https://new.xraymedem.com/product/cr-30x/"
+    },
+    {
+        "id":  569,
+        "title":  "Drystar 5301",
+        "slug":  "drystar-5301",
+        "desc":  "Compact CR digital radiography system",
+        "img":  "https://new.xraymedem.com/wp-content/uploads/2025/09/agfa-Drystar-5301-scaled.jpg",
+        "link":  "https://new.xraymedem.com/product/drystar-5301/"
+    },
+    {
+        "id":  571,
+        "title":  "Drystar 5302",
+        "slug":  "drystar-5302",
+        "desc":  "Laser printer for medical imaging",
+        "img":  "https://new.xraymedem.com/wp-content/uploads/2025/09/Agfa-Drystar-5302-scaled.jpg",
+        "link":  "https://new.xraymedem.com/product/drystar-5302/"
+    },
+    {
+        "id":  573,
+        "title":  "Drystar Axys",
+        "slug":  "drystar-axys",
+        "desc":  "High-speed medical laser printer",
+        "img":  "https://new.xraymedem.com/wp-content/uploads/2025/09/Agfa-Drystar-Axys-scaled.jpg",
+        "link":  "https://new.xraymedem.com/product/drystar-axys/"
+    },
+    {
+        "id":  575,
+        "title":  "MD1.0",
+        "slug":  "md1-0",
+        "desc":  "High-volume medical image printer",
+        "img":  "https://new.xraymedem.com/wp-content/uploads/2025/09/Agfa-Cassette-MD1.0-scaled.jpg",
+        "link":  "https://new.xraymedem.com/product/md1-0/"
+    },
+    {
+        "id":  577,
+        "title":  "MD4.0",
+        "slug":  "md4-0",
+        "desc":  "Cassette and screen for CR systems",
+        "img":  "https://new.xraymedem.com/wp-content/uploads/2025/09/Agfa-Cassette-MD4.0-scaled.jpg",
+        "link":  "https://new.xraymedem.com/product/md4-0/"
+    },
+    {
+        "id":  579,
+        "title":  "MD4.0T",
+        "slug":  "md4-0t",
+        "desc":  "Cassette and screen for CR systems",
+        "img":  "https://new.xraymedem.com/wp-content/uploads/2025/09/Agfa-Cassette-MD4.0T-scaled.jpg",
+        "link":  "https://new.xraymedem.com/product/md4-0t/"
+    },
+    {
+        "id":  581,
+        "title":  "MD4.0R",
+        "slug":  "md4-0r",
+        "desc":  "Medical film for X-ray diagnostics",
+        "img":  "https://new.xraymedem.com/wp-content/uploads/2025/09/Agfa-Cassette-MD4.0R-scaled.jpg",
+        "link":  "https://new.xraymedem.com/product/md4-0r/"
+    },
+    {
+        "id":  583,
+        "title":  "HD5.0",
+        "slug":  "hd5-0",
+        "desc":  "High-sensitivity X-ray film",
+        "img":  "https://new.xraymedem.com/wp-content/uploads/2025/09/Agfa-HD5.0-scaled.jpg",
+        "link":  "https://new.xraymedem.com/product/hd5-0/"
+    },
+    {
+        "id":  585,
+        "title":  "HM5.0",
+        "slug":  "hm5-0",
+        "desc":  "Mammography X-ray film",
+        "img":  "https://new.xraymedem.com/wp-content/uploads/2025/09/Agfa-HM5.0-scaled.jpg",
+        "link":  "https://new.xraymedem.com/product/hm5-0/"
+    },
+    {
+        "id":  587,
+        "title":  "MM3.0T",
+        "slug":  "mm3-0t",
+        "desc":  "Film for dental X-ray imaging",
+        "img":  "https://new.xraymedem.com/wp-content/uploads/2025/09/Agfa-MM3.0T-scaled.jpg",
+        "link":  "https://new.xraymedem.com/product/mm3-0t/"
+    },
+    {
+        "id":  589,
+        "title":  "MM3.0R",
+        "slug":  "mm3-0r",
+        "desc":  "Dental X-ray film, high sensitivity",
+        "img":  "https://new.xraymedem.com/wp-content/uploads/2025/09/Agfa-MM3.0R-scaled.jpg",
+        "link":  "https://new.xraymedem.com/product/mm3-0r/"
+    },
+    {
+        "id":  591,
+        "title":  "UPP-110S",
+        "slug":  "upp-110s",
+        "desc":  "Black \u0026 white thermal paper for medical printers",
+        "img":  "https://new.xraymedem.com/wp-content/uploads/2025/09/Sony-UPP-110S-scaled.jpg",
+        "link":  "https://new.xraymedem.com/product/upp-110s/"
+    },
+    {
+        "id":  593,
+        "title":  "UPP-110HG",
+        "slug":  "upp-110hg",
+        "desc":  "High-quality thermal paper for printers",
+        "img":  "https://new.xraymedem.com/wp-content/uploads/2025/09/UPP-110HG-scaled.jpg",
+        "link":  "https://new.xraymedem.com/product/upp-110hg/"
+    },
+    {
+        "id":  595,
+        "title":  "UPP-110HD",
+        "slug":  "upp-110hd",
+        "desc":  "High-density paper for image printing",
+        "img":  "https://new.xraymedem.com/wp-content/uploads/2025/09/Sony-UPP-110HD-scaled.jpg",
+        "link":  "https://new.xraymedem.com/product/upp-110hd/"
+    },
+    {
+        "id":  597,
+        "title":  "UPP-210SE",
+        "slug":  "upp-210se",
+        "desc":  "Large-format thermal paper (210 mm)",
+        "img":  "https://new.xraymedem.com/wp-content/uploads/2025/09/Sony-UPP-210SE-scaled.jpg",
+        "link":  "https://new.xraymedem.com/product/upp-210se/"
+    },
+    {
+        "id":  599,
+        "title":  "UPP-210HD",
+        "slug":  "upp-210hd",
+        "desc":  "High-density paper (210 mm) for printers",
+        "img":  "https://new.xraymedem.com/wp-content/uploads/2025/09/Sony-UPP-210HD-scaled.jpg",
+        "link":  "https://new.xraymedem.com/product/upp-210hd/"
+    },
+    {
+        "id":  601,
+        "title":  "UPP-84S",
+        "slug":  "upp-84s",
+        "desc":  "Compact thermal paper (84 mm) for printers",
+        "img":  "https://new.xraymedem.com/wp-content/uploads/2025/09/Sony-UPP-84S-scaled.jpg",
+        "link":  "https://new.xraymedem.com/product/upp-84s/"
+    },
+    {
+        "id":  603,
+        "title":  "UPP-84HG",
+        "slug":  "upp-84hg",
+        "desc":  "High-quality thermal paper (84 mm)",
+        "img":  "https://new.xraymedem.com/wp-content/uploads/2025/09/Sony-UPP-84HG-scaled.jpg",
+        "link":  "https://new.xraymedem.com/product/upp-84hg/"
+    },
+    {
+        "id":  605,
+        "title":  "UPC-21L",
+        "slug":  "upc-21l",
+        "desc":  "Color print set for video printer",
+        "img":  "https://new.xraymedem.com/wp-content/uploads/2025/09/Sony-UPC-21L-scaled.jpg",
+        "link":  "https://new.xraymedem.com/product/upc-21l/"
+    },
+    {
+        "id":  607,
+        "title":  "UPC-21S",
+        "slug":  "upc-21s",
+        "desc":  "Color print set for video printer",
+        "img":  "https://new.xraymedem.com/wp-content/uploads/2025/09/Sony-UPC-21S-scaled.jpg",
+        "link":  "https://new.xraymedem.com/product/upc-21s/"
+    },
+    {
+        "id":  609,
+        "title":  "UPX898MD",
+        "slug":  "upx898md",
+        "desc":  "Sony medical video printer with thermoprint",
+        "img":  "https://new.xraymedem.com/wp-content/uploads/2025/09/Sony-UPX-898-MD-scaled.jpg",
+        "link":  "https://new.xraymedem.com/product/upx898md/"
+    },
+    {
+        "id":  611,
+        "title":  "4008s",
+        "slug":  "4008s",
+        "desc":  "Hemodialysis machine",
+        "img":  "https://new.xraymedem.com/wp-content/uploads/2025/09/Nephrology-Fresenius-4008s-scaled.jpg",
+        "link":  "https://new.xraymedem.com/product/4008s/"
+    },
+    {
+        "id":  613,
+        "title":  "5008s",
+        "slug":  "5008s",
+        "desc":  "Hemodiafiltration device (HD/HDF)",
+        "img":  "https://new.xraymedem.com/wp-content/uploads/2025/09/Nephrology-Fresenius-5008s-scaled.jpg",
+        "link":  "https://new.xraymedem.com/product/5008s/"
+    },
+    {
+        "id":  615,
+        "title":  "AV-set",
+        "slug":  "av-set",
+        "desc":  "Bloodline set for dialysis",
+        "img":  "https://new.xraymedem.com/wp-content/uploads/2025/09/Nephrology-Fresenius-AV-set-scaled.jpg",
+        "link":  "https://new.xraymedem.com/product/av-set/"
+    },
+    {
+        "id":  617,
+        "title":  "Bibag",
+        "slug":  "bibag",
+        "desc":  "Dry bicarbonate mix for solution prep",
+        "img":  "https://new.xraymedem.com/wp-content/uploads/2025/09/Nephrology-Fresenius-Bibag-scaled.jpg",
+        "link":  "https://new.xraymedem.com/product/bibag/"
+    },
+    {
+        "id":  619,
+        "title":  "dx60",
+        "slug":  "dx60",
+        "desc":  "Dialyzer (filter) for hemodialysis",
+        "img":  "https://new.xraymedem.com/wp-content/uploads/2025/09/Fx60-scaled.jpg",
+        "link":  "https://new.xraymedem.com/product/dx60/"
+    },
+    {
+        "id":  621,
+        "title":  "dx80",
+        "slug":  "dx80",
+        "desc":  "Dialyzer (filter) for hemodialysis",
+        "img":  "https://new.xraymedem.com/wp-content/uploads/2025/09/Fx80-scaled.jpg",
+        "link":  "https://new.xraymedem.com/product/dx80/"
+    },
+    {
+        "id":  623,
+        "title":  "dx100",
+        "slug":  "dx100",
+        "desc":  "Dialyzer (filter) for hemodialysis",
+        "img":  "https://new.xraymedem.com/wp-content/uploads/2025/09/dx100-scaled.jpg",
+        "link":  "https://new.xraymedem.com/product/dx100/"
+    },
+    {
+        "id":  1054,
+        "title":  "Directview Vita CR Systems",
+        "slug":  "directview-vita-cr-systems",
+        "desc":  "Created to ensure high quality diagnostic images.",
+        "img":  "https://new.xraymedem.com/wp-content/uploads/2025/10/Directview-Vita-CR-Systems-scaled.png",
+        "link":  "https://new.xraymedem.com/product/directview-vita-cr-systems/"
+    },
+    {
+        "id":  1056,
+        "title":  "DryView 5700 Laser Imaging Printer System",
+        "slug":  "dryview-5700-laser-imaging-printer-system",
+        "desc":  "Multiformat laser medical printer, reliable and user-friendly.",
+        "img":  "https://new.xraymedem.com/wp-content/uploads/2025/10/DryView-5700-Laser-Imaging-Printer-System-scaled.png",
+        "link":  "https://new.xraymedem.com/product/dryview-5700-laser-imaging-printer-system/"
+    },
+    {
+        "id":  1058,
+        "title":  "DryView 5950 Laser Imaging System",
+        "slug":  "dryview-5950-laser-imaging-system",
+        "desc":  "Multi-format laser medical printer.",
+        "img":  "https://new.xraymedem.com/wp-content/uploads/2025/10/DryView-5950-Laser-Imaging-System-scaled.png",
+        "link":  "https://new.xraymedem.com/product/dryview-5950-laser-imaging-system/"
+    },
+    {
+        "id":  1060,
+        "title":  "MRI: Vantage",
+        "slug":  "mri-vantage",
+        "desc":  "MRI scanner family (1.5T/3T) known as the Vantage series.",
+        "img":  "https://new.xraymedem.com/wp-content/uploads/2025/10/Toshiba-MRI-Vantage-scaled.jpg",
+        "link":  "https://new.xraymedem.com/product/mri-vantage/"
+    },
+    {
+        "id":  1062,
+        "title":  "CT: Aquilion Prime",
+        "slug":  "ct-aquilion-prime",
+        "desc":  "Multi‑slice CT scanner (Aquilion Prime series).",
+        "img":  "https://new.xraymedem.com/wp-content/uploads/2025/10/CT-Aquilion-Prime-scaled.png",
+        "link":  "https://new.xraymedem.com/product/ct-aquilion-prime/"
+    },
+    {
+        "id":  1064,
+        "title":  "CT: Aquilion ONE",
+        "slug":  "ct-aquilion-one",
+        "desc":  "Premium CT scanner with a 320‑row detector.",
+        "img":  "https://new.xraymedem.com/wp-content/uploads/2025/10/CT-Aquilion-ONE-scaled.png",
+        "link":  "https://new.xraymedem.com/product/ct-aquilion-one/"
+    },
+    {
+        "id":  1066,
+        "title":  "GE Signa HD 1.5T MRI",
+        "slug":  "ge-signa-hd-1-5t-mri",
+        "desc":  "1.5T MRI scanner (SIGNA HD series).",
+        "img":  "https://new.xraymedem.com/wp-content/uploads/2025/10/GE-Signa-HD-1.5T-MRI-scaled.png",
+        "link":  "https://new.xraymedem.com/product/ge-signa-hd-1-5t-mri/"
+    },
+    {
+        "id":  1068,
+        "title":  "Optima MR360 MRI",
+        "slug":  "optima-mr360-mri",
+        "desc":  "1.5T MRI scanner (Optima family).",
+        "img":  "https://new.xraymedem.com/wp-content/uploads/2025/10/Optima-MR360-scaled.png",
+        "link":  "https://new.xraymedem.com/product/optima-mr360-mri/"
+    },
+    {
+        "id":  1070,
+        "title":  "GE Signa EXCITE 1.5T MRI",
+        "slug":  "ge-signa-excite-1-5t-mri",
+        "desc":  "1.5T MRI scanner (early SIGNA EXCITE generation).",
+        "img":  "https://new.xraymedem.com/wp-content/uploads/2025/10/GE-Signa-EXCITE-1.5T-MRI-scaled.png",
+        "link":  "https://new.xraymedem.com/product/ge-signa-excite-1-5t-mri/"
+    },
+    {
+        "id":  1072,
+        "title":  "MR system Optima MR450w",
+        "slug":  "mr-system-optima-mr450w",
+        "desc":  "1.5T wide‑bore MRI scanner.",
+        "img":  "https://new.xraymedem.com/wp-content/uploads/2025/10/MR-system-Optima-MR450w--scaled.png",
+        "link":  "https://new.xraymedem.com/product/mr-system-optima-mr450w/"
+    },
+    {
+        "id":  1074,
+        "title":  "CT: Discovery* NM/CT 670",
+        "slug":  "ct-discovery-nm-ct-670",
+        "desc":  "Hybrid SPECT/CT imaging system.",
+        "img":  "https://new.xraymedem.com/wp-content/uploads/2025/10/CT-Discovery-NMCT-670-scaled.png",
+        "link":  "https://new.xraymedem.com/product/ct-discovery-nm-ct-670/"
+    },
+    {
+        "id":  1076,
+        "title":  "CT: BrightSpeed",
+        "slug":  "ct-brightspeed",
+        "desc":  "16‑slice CT scanner (BrightSpeed family).",
+        "img":  "https://new.xraymedem.com/wp-content/uploads/2025/10/CT-BrightSpeed-scaled.png",
+        "link":  "https://new.xraymedem.com/product/ct-brightspeed/"
+    },
+    {
+        "id":  1078,
+        "title":  "CT: LightSpeed",
+        "slug":  "ct-lightspeed",
+        "desc":  "Multi‑slice CT scanner family (4–64‑slice variants).",
+        "img":  "https://new.xraymedem.com/wp-content/uploads/2025/10/CT-LightSpeed-scaled.png",
+        "link":  "https://new.xraymedem.com/product/ct-lightspeed/"
+    },
+    {
+        "id":  1080,
+        "title":  "CT: Optima CT660",
+        "slug":  "ct-optima-ct660",
+        "desc":  "64‑slice CT scanner.",
+        "img":  "https://new.xraymedem.com/wp-content/uploads/2025/10/CT-Optima-CT660-scaled.png",
+        "link":  "https://new.xraymedem.com/product/ct-optima-ct660/"
+    },
+    {
+        "id":  1082,
+        "title":  "CT: Revolution",
+        "slug":  "ct-revolution",
+        "desc":  "High‑end multi‑slice CT scanner family.",
+        "img":  "https://new.xraymedem.com/wp-content/uploads/2025/10/CT-Revolution-scaled.png",
+        "link":  "https://new.xraymedem.com/product/ct-revolution/"
+    },
+    {
+        "id":  1084,
+        "title":  "Achieva 1.5T A-series MRI",
+        "slug":  "achieva-1-5t-a-series-mri",
+        "desc":  "1.5T MRI scanner (Achieva platform).",
+        "img":  "https://new.xraymedem.com/wp-content/uploads/2025/10/Achieva-1.5T-A-series-MRI-scaled.png",
+        "link":  "https://new.xraymedem.com/product/achieva-1-5t-a-series-mri/"
+    },
+    {
+        "id":  1086,
+        "title":  "MRI: Ingenia",
+        "slug":  "mri-ingenia",
+        "desc":  "MRI scanner family (1.5T/3T) on the dStream platform.",
+        "img":  "https://new.xraymedem.com/wp-content/uploads/2025/10/MRI-Ingenia-scaled.png",
+        "link":  "https://new.xraymedem.com/product/mri-ingenia/"
+    },
+    {
+        "id":  1088,
+        "title":  "Focused Ultrasound (HIFU)",
+        "slug":  "focused-ultrasound-hifu",
+        "desc":  "Focused Ultrasound (HIFU)",
+        "img":  "https://new.xraymedem.com/wp-content/uploads/2025/10/Focused-Ultrasound-HIFU-scaled.png",
+        "link":  "https://new.xraymedem.com/product/focused-ultrasound-hifu/"
+    },
+    {
+        "id":  1090,
+        "title":  "Brilliance CT Big Bore",
+        "slug":  "brilliance-ct-big-bore",
+        "desc":  "CT scanner with a large bore for radiotherapy planning.",
+        "img":  "https://new.xraymedem.com/wp-content/uploads/2025/10/Brilliance-CT-Big-Bore-scaled.png",
+        "link":  "https://new.xraymedem.com/product/brilliance-ct-big-bore/"
+    },
+    {
+        "id":  1092,
+        "title":  "CT Ingenuity",
+        "slug":  "ct-ingenuity",
+        "desc":  "Multi‑slice CT scanner family (Ingenuity series).",
+        "img":  "https://new.xraymedem.com/wp-content/uploads/2025/10/CT-Ingenuity-scaled.png",
+        "link":  "https://new.xraymedem.com/product/ct-ingenuity/"
+    },
+    {
+        "id":  1094,
+        "title":  "Philips MX CT Scanner",
+        "slug":  "philips-mx-ct-scanner",
+        "desc":  "Entry‑level 16‑slice CT scanner (MX16).",
+        "img":  "https://new.xraymedem.com/wp-content/uploads/2025/10/Philips-MX-CT-Scanner-scaled.png",
+        "link":  "https://new.xraymedem.com/product/philips-mx-ct-scanner/"
+    },
+    {
+        "id":  1096,
+        "title":  "Brilliance iCT",
+        "slug":  "brilliance-ict",
+        "desc":  "256‑slice CT scanner.",
+        "img":  "https://new.xraymedem.com/wp-content/uploads/2025/10/Brilliance-iCT-scaled.png",
+        "link":  "https://new.xraymedem.com/product/brilliance-ict/"
+    },
+    {
+        "id":  1098,
+        "title":  "MAGNETOM Verio",
+        "slug":  "magnetom-verio",
+        "desc":  "3T MRI scanner",
+        "img":  "https://new.xraymedem.com/wp-content/uploads/2025/10/MAGNETOM-Verio-scaled.png",
+        "link":  "https://new.xraymedem.com/product/magnetom-verio/"
+    },
+    {
+        "id":  1100,
+        "title":  "MAGNETOM Espree",
+        "slug":  "magnetom-espree",
+        "desc":  "1.5T MRI scanner",
+        "img":  "https://new.xraymedem.com/wp-content/uploads/2025/10/Siemens-1.5T-MAGNETOM-Espree-scaled.png",
+        "link":  "https://new.xraymedem.com/product/magnetom-espree/"
+    },
+    {
+        "id":  1102,
+        "title":  "MAGNETOM Avanto",
+        "slug":  "magnetom-avanto",
+        "desc":  "1.5T MRI scanner",
+        "img":  "https://new.xraymedem.com/wp-content/uploads/2025/10/Avanto-scaled.png",
+        "link":  "https://new.xraymedem.com/product/magnetom-avanto/"
+    },
+    {
+        "id":  1104,
+        "title":  "MAGNETOM Spectra",
+        "slug":  "magnetom-spectra",
+        "desc":  "3T MRI scanner.",
+        "img":  "https://new.xraymedem.com/wp-content/uploads/2025/10/MAGNETOM-Spectra-scaled.png",
+        "link":  "https://new.xraymedem.com/product/magnetom-spectra/"
+    },
+    {
+        "id":  1106,
+        "title":  "CT: Siemens Definition",
+        "slug":  "ct-siemens-definition",
+        "desc":  "Dual‑source CT scanner family (Definition series)",
+        "img":  "https://new.xraymedem.com/wp-content/uploads/2025/10/CT-Siemens-Definition-scaled.png",
+        "link":  "https://new.xraymedem.com/product/ct-siemens-definition/"
+    },
+    {
+        "id":  1108,
+        "title":  "CT: Siemens Emotion 16",
+        "slug":  "ct-siemens-emotion-16",
+        "desc":  "16‑slice CT scanner.",
+        "img":  "https://new.xraymedem.com/wp-content/uploads/2025/10/CT-Siemens-Emotion-16-scaled.png",
+        "link":  "https://new.xraymedem.com/product/ct-siemens-emotion-16/"
+    },
+    {
+        "id":  1110,
+        "title":  "Siemens SENSATION CT scanner",
+        "slug":  "siemens-sensation-ct-scanner",
+        "desc":  "Multi‑slice CT scanner family (e.g., Sensation 16/64)",
+        "img":  "https://new.xraymedem.com/wp-content/uploads/2025/10/Siemens-SENSATION-CT-scanner-scaled.png",
+        "link":  "https://new.xraymedem.com/product/siemens-sensation-ct-scanner/"
+    }
+]

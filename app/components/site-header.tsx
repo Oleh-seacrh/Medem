@@ -19,9 +19,9 @@ type ProductMenuItem = {
 
 const navItems: NavItem[] = [
   { id: "home", label: "Home", href: "/" },
-  { id: "products", label: "Products", href: "#products" },
+  { id: "products", label: "Products", href: "/products" },
   { id: "partnership", label: "Partnership", href: "/partners" },
-  { id: "contact", label: "Contact us", href: "#contact" }
+  { id: "contact", label: "Contact us", href: "/contacts" }
 ];
 
 // Sourced from xraymedem.WordPress.2026-03-12.xml (product_cat terms).
@@ -83,8 +83,8 @@ export function SiteHeader() {
   const quoteTriggerRef = useRef<HTMLButtonElement | null>(null);
   const shouldReduceMotion = useReducedMotion();
   const pathname = usePathname();
-  const productsHref = pathname === "/" ? "#products" : "/#products";
-  const contactHref = pathname === "/" ? "#contact" : "/#contact";
+  const productsHref = "/products";
+  const contactHref = "/contacts";
 
   const clearProductsCloseTimer = () => {
     if (closeProductsTimerRef.current) {
@@ -159,6 +159,21 @@ export function SiteHeader() {
   useEffect(() => {
     if (pathname === "/partners" || pathname === "/partnership") {
       setActiveNav("partnership");
+      return;
+    }
+
+    if (pathname === "/contacts") {
+      setActiveNav("contact");
+      return;
+    }
+
+    if (pathname === "/catalog" || pathname === "/products") {
+      setActiveNav("products");
+      return;
+    }
+
+    if (pathname === "/") {
+      setActiveNav("home");
     }
   }, [pathname]);
 
@@ -410,7 +425,7 @@ export function SiteHeader() {
             whileTap={{ scale: 0.985 }}
             whileFocus={{ y: -2 }}
           >
-            Get a quote
+            <span className="header-cta-label">Get a quote</span>
           </motion.button>
         </motion.div>
       </div>
