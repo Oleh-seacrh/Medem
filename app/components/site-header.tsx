@@ -3,7 +3,7 @@
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { Clock3, PackageCheck, ShieldCheck, X } from "lucide-react";
 import { usePathname } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
+import { type FormEvent, useEffect, useRef, useState } from "react";
 
 type NavItem = {
   id: string;
@@ -77,6 +77,11 @@ export function SiteHeader() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isProductsOpen, setIsProductsOpen] = useState(false);
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
+  const [isSubmittingQuote, setIsSubmittingQuote] = useState(false);
+  const [quoteSubmitStatus, setQuoteSubmitStatus] = useState<{
+    type: "success" | "error";
+    message: string;
+  } | null>(null);
   const closeProductsTimerRef = useRef<ReturnType<typeof setTimeout> | null>(
     null
   );
@@ -109,14 +114,60 @@ export function SiteHeader() {
   const openQuoteModal = () => {
     clearProductsCloseTimer();
     setIsProductsOpen(false);
+    setQuoteSubmitStatus(null);
     setIsQuoteModalOpen(true);
   };
 
   const closeQuoteModal = () => {
     setIsQuoteModalOpen(false);
+    setQuoteSubmitStatus(null);
     window.setTimeout(() => {
       quoteTriggerRef.current?.focus();
     }, 0);
+  };
+
+  const submitQuoteRequest = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setQuoteSubmitStatus(null);
+    setIsSubmittingQuote(true);
+
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+
+    const payload = {
+      name: String(formData.get("name") ?? ""),
+      phone: String(formData.get("phone") ?? ""),
+      email: String(formData.get("email") ?? ""),
+      product: String(formData.get("product") ?? ""),
+      message: String(formData.get("message") ?? "")
+    };
+
+    try {
+      const response = await fetch("/api/quote", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(payload)
+      });
+
+      if (!response.ok) {
+        throw new Error("Request failed");
+      }
+
+      form.reset();
+      setQuoteSubmitStatus({
+        type: "success",
+        message: "Request sent. We will contact you shortly."
+      });
+    } catch {
+      setQuoteSubmitStatus({
+        type: "error",
+        message: "Failed to send request. Please try again."
+      });
+    } finally {
+      setIsSubmittingQuote(false);
+    }
   };
 
   useEffect(() => {
@@ -504,10 +555,7 @@ export function SiteHeader() {
 
                 <form
                   className="quote-modal-form"
-                  onSubmit={(event) => {
-                    event.preventDefault();
-                    closeQuoteModal();
-                  }}
+                  onSubmit={submitQuoteRequest}
                 >
                   <div className="quote-modal-grid">
                     <label className="quote-modal-field">
@@ -550,10 +598,22 @@ export function SiteHeader() {
                   </div>
 
                   <div className="quote-modal-actions">
-                    <button type="submit" className="quote-modal-submit">
-                      Send request
+                    <button
+                      type="submit"
+                      className="quote-modal-submit"
+                      disabled={isSubmittingQuote}
+                    >
+                      {isSubmittingQuote ? "Sending..." : "Send request"}
                     </button>
                   </div>
+                  {quoteSubmitStatus ? (
+                    <p
+                      className={`quote-modal-status quote-modal-status--${quoteSubmitStatus.type}`}
+                      role="status"
+                    >
+                      {quoteSubmitStatus.message}
+                    </p>
+                  ) : null}
                 </form>
               </div>
             </motion.div>

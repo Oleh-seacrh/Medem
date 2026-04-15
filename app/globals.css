@@ -664,6 +664,27 @@ main {
     box-shadow 0.24s ease;
 }
 
+.quote-modal-submit:disabled {
+  opacity: 0.72;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: 0 10px 20px rgba(243, 102, 34, 0.2);
+}
+
+.quote-modal-status {
+  margin-top: 12px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.quote-modal-status--success {
+  color: #1f7a3e;
+}
+
+.quote-modal-status--error {
+  color: #b42318;
+}
+
 .menu-pill:focus-visible,
 .menu-pill-products-toggle:focus-visible,
 .header-tool--modern:focus-visible,
