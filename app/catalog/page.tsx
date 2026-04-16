@@ -34,6 +34,11 @@ const products = catalogProducts as CatalogProduct[];
 const productMap = new Map(products.map((product) => [product.id, product]));
 
 const downloadCatalogUrl = "/MEDEM%20Catalogue.pdf";
+const catalogHighlights = [
+  "1000+ certified products",
+  "Offer within 24 hours",
+  "Global shipping support"
+];
 
 function normalizeText(value: string): string {
   return value
@@ -103,6 +108,11 @@ const catalogSections: CatalogSection[] = [
         mode: "products",
         brands: [
           {
+            name: "Fujifilm",
+            logo: "https://new.xraymedem.com/wp-content/uploads/2025/10/Fujifilm_logo.svg",
+            productIds: [1201, 1202, 1203, 1204, 1205, 1206, 1207]
+          },
+          {
             name: "Sony",
             logo: "https://new.xraymedem.com/wp-content/uploads/2025/10/Sony_logo.svg",
             productIds: [591, 593, 595, 597, 599, 601, 603, 605, 607]
@@ -126,6 +136,11 @@ const catalogSections: CatalogSection[] = [
         title: "Cassette",
         mode: "products",
         brands: [
+          {
+            name: "Fujifilm",
+            logo: "https://new.xraymedem.com/wp-content/uploads/2025/10/Fujifilm_logo.svg",
+            productIds: [1211, 1212, 1213, 1214, 1215, 1216, 1217, 1218]
+          },
           {
             name: "Agfa",
             logo: "https://new.xraymedem.com/wp-content/uploads/2025/10/Agfa_logo.svg",
@@ -259,6 +274,9 @@ function getProductsByIds(ids: number[] | undefined): CatalogProduct[] {
     .filter((product): product is CatalogProduct => Boolean(product));
 }
 
+const transparentImageProductIds = new Set([1201, 1202, 1203, 1204]);
+const reducedImageProductIds = new Set([1201]);
+
 type CatalogPageProps = {
   searchParams?: {
     item?: string;
@@ -273,6 +291,7 @@ export default function CatalogPage({ searchParams }: CatalogPageProps) {
       <section className="section">
         <article className="catalog-intro-card">
           <div className="catalog-intro-copy">
+            <p className="catalog-intro-kicker">Medical equipment marketplace</p>
             <h1>Products</h1>
             <p>
               Medem ltd. is a global medical distributor of equipment and
@@ -283,31 +302,50 @@ export default function CatalogPage({ searchParams }: CatalogPageProps) {
               Health, Konica Minolta Healthcare and many others. Minimum order
               quantity is 1 pallet.
             </p>
+            <div className="catalog-intro-highlights" aria-label="Catalog highlights">
+              {catalogHighlights.map((highlight) => (
+                <span key={highlight} className="catalog-highlight-pill">
+                  {highlight}
+                </span>
+              ))}
+            </div>
           </div>
 
-          <a
-            className="catalog-download-btn"
-            href={downloadCatalogUrl}
-            download="MEDEM Catalogue.pdf"
-          >
-            <span>Download catalog</span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="14"
-              height="14"
-              viewBox="0 0 14 14"
-              fill="none"
-              aria-hidden="true"
+          <div className="catalog-intro-actions">
+            <div className="catalog-intro-stats" aria-label="Catalog quick stats">
+              <div className="catalog-intro-stat">
+                <span className="catalog-intro-stat-value">1000+</span>
+                <span className="catalog-intro-stat-label">Items</span>
+              </div>
+              <div className="catalog-intro-stat">
+                <span className="catalog-intro-stat-value">70+</span>
+                <span className="catalog-intro-stat-label">Countries</span>
+              </div>
+            </div>
+            <a
+              className="catalog-download-btn"
+              href={downloadCatalogUrl}
+              download="MEDEM Catalogue.pdf"
             >
-              <path
-                d="M11.0834 7.00002L2.91669 7.00002M11.0834 7.00002L7.58335 3.50002M11.0834 7.00002L7.58335 10.5"
-                stroke="currentColor"
-                strokeWidth="1.6"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </a>
+              <span>Download catalog</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                viewBox="0 0 14 14"
+                fill="none"
+                aria-hidden="true"
+              >
+                <path
+                  d="M11.0834 7.00002L2.91669 7.00002M11.0834 7.00002L7.58335 3.50002M11.0834 7.00002L7.58335 10.5"
+                  stroke="currentColor"
+                  strokeWidth="1.6"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </a>
+          </div>
         </article>
       </section>
 
@@ -359,7 +397,11 @@ export default function CatalogPage({ searchParams }: CatalogPageProps) {
                               <article key={product.id} className="catalog-product-card">
                                 <a
                                   href={product.link}
-                                  className="catalog-product-image-link"
+                                  className={`catalog-product-image-link${
+                                    transparentImageProductIds.has(product.id)
+                                      ? " catalog-product-image-link--transparent"
+                                      : ""
+                                  }`}
                                   target="_blank"
                                   rel="noreferrer"
                                 >
@@ -367,6 +409,11 @@ export default function CatalogPage({ searchParams }: CatalogPageProps) {
                                     src={product.img}
                                     alt={product.title}
                                     loading="lazy"
+                                    className={
+                                      reducedImageProductIds.has(product.id)
+                                        ? "catalog-product-image--reduced"
+                                        : undefined
+                                    }
                                   />
                                 </a>
                                 <h3>{normalizeText(product.title)}</h3>

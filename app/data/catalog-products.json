@@ -638,5 +638,125 @@
         "desc":  "Multi‑slice CT scanner family (e.g., Sensation 16/64)",
         "img":  "https://new.xraymedem.com/wp-content/uploads/2025/10/Siemens-SENSATION-CT-scanner-scaled.png",
         "link":  "https://new.xraymedem.com/product/siemens-sensation-ct-scanner/"
+    },
+    {
+        "id":  1201,
+        "title":  "Photopaper FUJI Supreme",
+        "slug":  "photopaper-fuji-supreme",
+        "desc":  "Photopaper for medical image printing",
+        "img":  "/catalog/fujifilm-paper/supreme.png",
+        "link":  "https://new.xraymedem.com/"
+    },
+    {
+        "id":  1202,
+        "title":  "Fujifilm Crystal Archive Digital Color Paper Type 80",
+        "slug":  "fujifilm-crystal-archive-digital-color-paper-type-80",
+        "desc":  "Digital color paper for image output",
+        "img":  "/catalog/fujifilm-paper/crystal-archive-type-80.png",
+        "link":  "https://new.xraymedem.com/"
+    },
+    {
+        "id":  1203,
+        "title":  "Fujifilm Digital Paper Pearl",
+        "slug":  "fujifilm-digital-paper-pearl",
+        "desc":  "Pearl-finish paper for medical printers",
+        "img":  "/catalog/fujifilm-paper/digital-paper-pearl.png",
+        "link":  "https://new.xraymedem.com/"
+    },
+    {
+        "id":  1204,
+        "title":  "Fujifilm Digital Paper Silk",
+        "slug":  "fujifilm-digital-paper-silk",
+        "desc":  "Silk-finish digital paper for imaging output",
+        "img":  "/catalog/fujifilm-paper/digital-paper-silk.png",
+        "link":  "https://new.xraymedem.com/"
+    },
+    {
+        "id":  1205,
+        "title":  "Fujihunt Enviroprint",
+        "slug":  "fujihunt-enviroprint",
+        "desc":  "Chemistry for photo print processing",
+        "img":  "/catalog/fujifilm-paper/fujihunt-enviroprint.png",
+        "link":  "https://new.xraymedem.com/"
+    },
+    {
+        "id":  1206,
+        "title":  "Fujihunt EnviroNeg",
+        "slug":  "fujihunt-environeg",
+        "desc":  "Processing chemistry for negatives",
+        "img":  "/catalog/fujifilm-paper/fujihunt-environeg.png",
+        "link":  "https://new.xraymedem.com/"
+    },
+    {
+        "id":  1207,
+        "title":  "Fujihunt Negacolor",
+        "slug":  "fujihunt-negacolor",
+        "desc":  "Color negative processing chemistry",
+        "img":  "/catalog/fujifilm-paper/fujihunt-negacolor.png",
+        "link":  "https://new.xraymedem.com/"
+    },
+    {
+        "id":  1211,
+        "title":  "Fujifilm IP Cassette Type CC",
+        "slug":  "fujifilm-ip-cassette-type-cc",
+        "desc":  "Computed radiography cassette Type CC",
+        "img":  "https://new.xraymedem.com/wp-content/uploads/2025/08/Cassette-and-screen-for-CR-Classic-scaled.jpg",
+        "link":  "https://new.xraymedem.com/"
+    },
+    {
+        "id":  1212,
+        "title":  "Fujifilm IP Cassette Type CH",
+        "slug":  "fujifilm-ip-cassette-type-ch",
+        "desc":  "Computed radiography cassette Type CH",
+        "img":  "https://new.xraymedem.com/wp-content/uploads/2025/08/Cassette-and-screen-for-CR-VitaFlex-scaled.jpg",
+        "link":  "https://new.xraymedem.com/"
+    },
+    {
+        "id":  1213,
+        "title":  "Fujifilm IP Cassette Type DS",
+        "slug":  "fujifilm-ip-cassette-type-ds",
+        "desc":  "Computed radiography cassette Type DS",
+        "img":  "https://new.xraymedem.com/wp-content/uploads/2025/08/Cassette-and-screen-for-CR-Classic-scaled.jpg",
+        "link":  "https://new.xraymedem.com/"
+    },
+    {
+        "id":  1214,
+        "title":  "Fujifilm IP Cassette Type HR-BD m",
+        "slug":  "fujifilm-ip-cassette-type-hr-bd-m",
+        "desc":  "Computed radiography cassette Type HR-BD m",
+        "img":  "https://new.xraymedem.com/wp-content/uploads/2025/08/Cassette-and-screen-for-CR-VitaFlex-scaled.jpg",
+        "link":  "https://new.xraymedem.com/"
+    },
+    {
+        "id":  1215,
+        "title":  "Fujifilm IP Cassette Type CR ST-VI",
+        "slug":  "fujifilm-ip-cassette-type-cr-st-vi",
+        "desc":  "Computed radiography cassette Type CR ST-VI",
+        "img":  "https://new.xraymedem.com/wp-content/uploads/2025/08/Cassette-and-screen-for-CR-Classic-scaled.jpg",
+        "link":  "https://new.xraymedem.com/"
+    },
+    {
+        "id":  1216,
+        "title":  "Fujifilm IP Cassette Type CR HR-V",
+        "slug":  "fujifilm-ip-cassette-type-cr-hr-v",
+        "desc":  "Computed radiography cassette Type CR HR-V",
+        "img":  "https://new.xraymedem.com/wp-content/uploads/2025/08/Cassette-and-screen-for-CR-VitaFlex-scaled.jpg",
+        "link":  "https://new.xraymedem.com/"
+    },
+    {
+        "id":  1217,
+        "title":  "Fujifilm IP Cassette Type CR ST-BD",
+        "slug":  "fujifilm-ip-cassette-type-cr-st-bd",
+        "desc":  "Computed radiography cassette Type CR ST-BD",
+        "img":  "https://new.xraymedem.com/wp-content/uploads/2025/08/Cassette-and-screen-for-CR-Classic-scaled.jpg",
+        "link":  "https://new.xraymedem.com/"
+    },
+    {
+        "id":  1218,
+        "title":  "Fujifilm IP Cassette Type CR HR-BD",
+        "slug":  "fujifilm-ip-cassette-type-cr-hr-bd",
+        "desc":  "Computed radiography cassette Type CR HR-BD",
+        "img":  "https://new.xraymedem.com/wp-content/uploads/2025/08/Cassette-and-screen-for-CR-VitaFlex-scaled.jpg",
+        "link":  "https://new.xraymedem.com/"
     }
 ]
