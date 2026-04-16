@@ -33,8 +33,7 @@ type CatalogSection = {
 const products = catalogProducts as CatalogProduct[];
 const productMap = new Map(products.map((product) => [product.id, product]));
 
-const downloadCatalogUrl =
-  "https://new.xraymedem.com/wp-content/uploads/2025/09/Catalog_MEDEM.pdf";
+const downloadCatalogUrl = "/MEDEM%20Catalogue.pdf";
 
 function normalizeText(value: string): string {
   return value
@@ -289,8 +288,7 @@ export default function CatalogPage({ searchParams }: CatalogPageProps) {
           <a
             className="catalog-download-btn"
             href={downloadCatalogUrl}
-            target="_blank"
-            rel="noreferrer"
+            download="MEDEM Catalogue.pdf"
           >
             <span>Download catalog</span>
             <svg
