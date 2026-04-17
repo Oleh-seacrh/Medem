@@ -274,8 +274,18 @@ function getProductsByIds(ids: number[] | undefined): CatalogProduct[] {
     .filter((product): product is CatalogProduct => Boolean(product));
 }
 
-const transparentImageProductIds = new Set([1201, 1202, 1203, 1204]);
-const reducedImageProductIds = new Set([1201]);
+const transparentImageProductIds = new Set([
+  1201, 1202, 1203, 1204, 1211, 1212, 1213, 1214, 1215, 1216, 1217, 1218
+]);
+const reducedImageProductIds = new Set([
+  1201
+]);
+const enlargedImageProductIds = new Set([
+  1211, 1212, 1213, 1214, 1215, 1216, 1217, 1218
+]);
+const containImageProductIds = new Set([
+  1201, 1211, 1212, 1213, 1214, 1215, 1216, 1217, 1218
+]);
 
 type CatalogPageProps = {
   searchParams?: {
@@ -401,6 +411,10 @@ export default function CatalogPage({ searchParams }: CatalogPageProps) {
                                     transparentImageProductIds.has(product.id)
                                       ? " catalog-product-image-link--transparent"
                                       : ""
+                                  }${
+                                    containImageProductIds.has(product.id)
+                                      ? " catalog-product-image-link--contain"
+                                      : ""
                                   }`}
                                   target="_blank"
                                   rel="noreferrer"
@@ -410,9 +424,16 @@ export default function CatalogPage({ searchParams }: CatalogPageProps) {
                                     alt={product.title}
                                     loading="lazy"
                                     className={
-                                      reducedImageProductIds.has(product.id)
-                                        ? "catalog-product-image--reduced"
-                                        : undefined
+                                      [
+                                        reducedImageProductIds.has(product.id)
+                                          ? "catalog-product-image--reduced"
+                                          : "",
+                                        enlargedImageProductIds.has(product.id)
+                                          ? "catalog-product-image--enlarged"
+                                          : ""
+                                      ]
+                                        .filter(Boolean)
+                                        .join(" ") || undefined
                                     }
                                   />
                                 </a>

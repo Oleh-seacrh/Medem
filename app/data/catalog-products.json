@@ -700,7 +700,7 @@
         "title":  "Fujifilm IP Cassette Type CC",
         "slug":  "fujifilm-ip-cassette-type-cc",
         "desc":  "Computed radiography cassette Type CC",
-        "img":  "https://new.xraymedem.com/wp-content/uploads/2025/08/Cassette-and-screen-for-CR-Classic-scaled.jpg",
+        "img":  "/catalog/fujifilm-cassettes/type-cc.png",
         "link":  "https://new.xraymedem.com/"
     },
     {
@@ -708,7 +708,7 @@
         "title":  "Fujifilm IP Cassette Type CH",
         "slug":  "fujifilm-ip-cassette-type-ch",
         "desc":  "Computed radiography cassette Type CH",
-        "img":  "https://new.xraymedem.com/wp-content/uploads/2025/08/Cassette-and-screen-for-CR-VitaFlex-scaled.jpg",
+        "img":  "/catalog/fujifilm-cassettes/type-ch.png",
         "link":  "https://new.xraymedem.com/"
     },
     {
@@ -716,7 +716,7 @@
         "title":  "Fujifilm IP Cassette Type DS",
         "slug":  "fujifilm-ip-cassette-type-ds",
         "desc":  "Computed radiography cassette Type DS",
-        "img":  "https://new.xraymedem.com/wp-content/uploads/2025/08/Cassette-and-screen-for-CR-Classic-scaled.jpg",
+        "img":  "/catalog/fujifilm-cassettes/type-ds.png",
         "link":  "https://new.xraymedem.com/"
     },
     {
@@ -724,7 +724,7 @@
         "title":  "Fujifilm IP Cassette Type HR-BD m",
         "slug":  "fujifilm-ip-cassette-type-hr-bd-m",
         "desc":  "Computed radiography cassette Type HR-BD m",
-        "img":  "https://new.xraymedem.com/wp-content/uploads/2025/08/Cassette-and-screen-for-CR-VitaFlex-scaled.jpg",
+        "img":  "/catalog/fujifilm-cassettes/type-hr-bd-m.png",
         "link":  "https://new.xraymedem.com/"
     },
     {
@@ -732,7 +732,7 @@
         "title":  "Fujifilm IP Cassette Type CR ST-VI",
         "slug":  "fujifilm-ip-cassette-type-cr-st-vi",
         "desc":  "Computed radiography cassette Type CR ST-VI",
-        "img":  "https://new.xraymedem.com/wp-content/uploads/2025/08/Cassette-and-screen-for-CR-Classic-scaled.jpg",
+        "img":  "/catalog/fujifilm-cassettes/type-cr-st-vi.png",
         "link":  "https://new.xraymedem.com/"
     },
     {
@@ -740,7 +740,7 @@
         "title":  "Fujifilm IP Cassette Type CR HR-V",
         "slug":  "fujifilm-ip-cassette-type-cr-hr-v",
         "desc":  "Computed radiography cassette Type CR HR-V",
-        "img":  "https://new.xraymedem.com/wp-content/uploads/2025/08/Cassette-and-screen-for-CR-VitaFlex-scaled.jpg",
+        "img":  "/catalog/fujifilm-cassettes/type-cr-hr-v.png",
         "link":  "https://new.xraymedem.com/"
     },
     {
@@ -748,7 +748,7 @@
         "title":  "Fujifilm IP Cassette Type CR ST-BD",
         "slug":  "fujifilm-ip-cassette-type-cr-st-bd",
         "desc":  "Computed radiography cassette Type CR ST-BD",
-        "img":  "https://new.xraymedem.com/wp-content/uploads/2025/08/Cassette-and-screen-for-CR-Classic-scaled.jpg",
+        "img":  "/catalog/fujifilm-cassettes/type-cr-st-bd.png",
         "link":  "https://new.xraymedem.com/"
     },
     {
@@ -756,7 +756,7 @@
         "title":  "Fujifilm IP Cassette Type CR HR-BD",
         "slug":  "fujifilm-ip-cassette-type-cr-hr-bd",
         "desc":  "Computed radiography cassette Type CR HR-BD",
-        "img":  "https://new.xraymedem.com/wp-content/uploads/2025/08/Cassette-and-screen-for-CR-VitaFlex-scaled.jpg",
+        "img":  "/catalog/fujifilm-cassettes/type-cr-hr-bd.png",
         "link":  "https://new.xraymedem.com/"
     }
 ]
